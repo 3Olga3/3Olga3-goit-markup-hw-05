@@ -348,17 +348,18 @@ body {
   display: block;
 }
 .block-applications {
-  display: block;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   font-weight: bold;
   font-size: 14px;
-  line-height: 1.14px;
-  text-align: center;
+  line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #ffffff;
   background-color: rgba(47, 48, 58, 0.8);
-  padding: 27px;
   width: 100%;
   left: 0;
   bottom: 0;
@@ -437,12 +438,14 @@ body {
   fill: #afb1b8;
 }
 
-.img-team.item:hover .img-team.link,
-.img-team.item:focus .img-team.link,
+.img-team.link:hover,
+.img-team.link:focus {
+  background-color: var(--accent-color);
+}
+
 .img-team.link:hover .img-team-icon,
 .img-team.link:focus .img-team-icon {
   fill: var(--primary-bg-color);
-  background-color: var(--accent-color);
 }
 /*button*/
 .hero-button {
@@ -499,10 +502,12 @@ body {
   height: 92px;
   fill: #afb1b8;
 
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
+}
+.clients-link-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .clients-item.list:hover .clients-link,
 .clients-item.list:focus .clients-link,
 .clients-link:hover .clients-link-icon,
@@ -627,16 +632,15 @@ body {
   padding: 63px 24px;
   color: var(--primary-bg-color);
   background-color: rgba(33, 150, 243, 0.9);
-  opacity: 0;
  
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateY(100%);
    
 }
 
-.portfolio-overlay-wrapper:hover .portfolio-overlay-list {
-  opacity: 1;
+.list.flex-link:hover .portfolio-overlay-list {
   transform: translateY(0);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*---------footer----------*/
@@ -765,7 +769,8 @@ body {
   background-color: rgba(0, 0, 0, 0.2);
 
   opacity:1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden {
   visibility:hidden;
